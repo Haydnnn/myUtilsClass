@@ -10,7 +10,7 @@ package 生产者消费者模型;
 class AirConditioner{
     private int number = 0;
     public synchronized void increment() throws InterruptedException {
-        while (number != 0){//1.判断
+        while (number != 0){//1.判断 用循环防止虚假唤醒
             this.wait();
         }
         //2.干活
